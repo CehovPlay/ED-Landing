@@ -18,15 +18,15 @@ export default function Hero() {
 
       {/* Подзаголовок слева сверху */}
       <p className="absolute left-6 top-24 max-w-[14ch] font-display text-2xl font-semibold leading-tight text-white sm:left-10 sm:text-3xl">
-        Brand &amp; Web
+        Product &amp; UI/UX
         <br />
-        Design Specialist
+        Designer
       </p>
 
       {/* Гигантская подпись внизу: Juan (outline) — карточка — Mora (fill) */}
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between px-4 sm:px-8">
-        <h1 className="text-outline select-none font-display text-[16vw] font-semibold leading-[0.8] tracking-tight">
-          Juan
+        <h1 className="text-outline select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight">
+          Dmitry
         </h1>
 
         {/* Маленькая проектная карточка по центру (перекрывает текст) */}
@@ -36,13 +36,13 @@ export default function Hero() {
           className="mb-[3vw] hidden h-[18vw] max-h-48 w-auto -rotate-6 rounded-xl object-cover shadow-2xl ring-1 ring-white/20 sm:block"
         />
 
-        <h1 className="select-none font-display text-[16vw] font-semibold leading-[0.8] tracking-tight text-peach">
-          Mora
+        <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-peach">
+          Edinac
         </h1>
       </div>
 
       <span className="absolute bottom-6 right-8 text-xs font-medium text-white/70">
-        Freelance Design Director
+        Product Designer · Team Lead
       </span>
     </section>
   )

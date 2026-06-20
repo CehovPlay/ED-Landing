@@ -22,7 +22,7 @@ export default function SiteHeader() {
           href="#top"
           className="pointer-events-auto text-sm font-semibold tracking-wide text-white mix-blend-difference"
         >
-          Juan • Mora
+          Dmitry • Edinac
         </a>
 
         {/* Центральная пилюля */}

@@ -44,10 +44,12 @@ export const A = {
   product: [2, 3, 4, 5, 6].map((n) => `${REF}/images/home-work${n}.jpg`),
 }
 
-// Навигация / контакты
+// Навигация / контакты (из CV Dmitry Edinac)
+// TODO: вставь реальные ссылки на профили — пока плейсхолдеры.
 export const NAV = {
-  email: 'mailto:juan@morable.co?subject=Hey%20Juan%20Mora!',
-  linkedin: 'https://www.linkedin.com/in/juanmmora/',
-  x: 'https://x.com/ByMorable',
-  behance: 'https://www.behance.net/juanmora2',
+  email: 'mailto:e.dmitry12@gmail.com?subject=Hey%20Dmitry!',
+  phone: 'tel:+37369883690',
+  linkedin: 'https://www.linkedin.com/',
+  x: 'https://x.com/',
+  behance: 'https://www.behance.net/',
 }

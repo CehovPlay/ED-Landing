@@ -25,18 +25,18 @@ export default function App() {
         <ServicesIntro />
         <ServiceRow
           id="websites"
-          title="Websites & Landing pages"
-          subtitle="Creating high-end and beautiful websites built to perform and convert."
+          title="Product & UX Design"
+          subtitle="End-to-end digital products — from UX research, user flows and wireframes to polished high-fidelity UI."
           images={A.websites}
         />
         <ServiceRow
-          title="Visual Branding"
-          subtitle="Helping brands find a distinctive visual language that truly stands out."
+          title="Design Systems"
+          subtitle="Building scalable design systems that keep products consistent and teams fast."
           images={A.branding}
         />
         <ServiceRow
-          title="Product Design Enhancement"
-          subtitle="Bringing fresh ideas to turn complex products into intuitive experiences with an elevated visual layer."
+          title="Visual Branding"
+          subtitle="Crafting brand identities, presentations and marketing materials that connect product with business value."
           images={A.product}
         />
         <WebflowFramer />

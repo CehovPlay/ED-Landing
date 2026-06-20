@@ -26,12 +26,12 @@ export default function WebflowFramer() {
         as="h2"
         className="font-display text-4xl font-semibold leading-tight text-ink sm:text-6xl"
       >
-        <FramedWord color="var(--color-royal)">Webflow</FramedWord> &amp;{' '}
-        <FramedWord color="var(--color-royal)">Framer</FramedWord>
+        <FramedWord color="var(--color-royal)">Figma</FramedWord> &amp;{' '}
+        <FramedWord color="var(--color-royal)">Prototyping</FramedWord>
       </Reveal>
       <Reveal as="p" delay={0.1} className="mx-auto mt-6 max-w-md text-sm text-ink/60 sm:text-base">
-        Building elegant and responsive projects featuring creative micro-interactions and seamless
-        CMS hand-off.
+        Building interactive prototypes and dev-ready handoff with clean, scalable design systems and
+        thoughtful micro-interactions.
       </Reveal>
     </section>
   )

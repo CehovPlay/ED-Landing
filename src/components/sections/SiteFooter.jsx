@@ -1,6 +1,6 @@
 import { A, NAV } from '../../data/assets'
 
-const STACK = ['Figma', 'Webflow', 'GSAP', 'AE/Lottie', 'Lennis Scroll']
+const STACK = ['Figma', 'React', 'Tailwind', 'GSAP', 'Lenis Scroll']
 
 export default function SiteFooter() {
   return (
@@ -42,19 +42,19 @@ export default function SiteFooter() {
       <div className="relative mx-auto w-full max-w-[1600px] px-4 pb-8 sm:px-8">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="font-display text-[18vw] font-semibold leading-[0.8] tracking-tight text-peach lg:text-[245px]">
-              Juan
+            <h2 className="font-display text-[12vw] font-semibold leading-[0.8] tracking-tight text-peach lg:text-[150px]">
+              Dmitry
             </h2>
             <p className="mt-3 text-xs font-semibold text-white/80 sm:text-base">
-              Freelance Design Director&nbsp;&nbsp;2026
+              Product &amp; UI/UX Designer&nbsp;&nbsp;2026
             </p>
           </div>
           <div className="text-right">
-            <h2 className="font-display text-[18vw] font-semibold leading-[0.8] tracking-tight text-peach lg:text-[245px]">
-              Mora
+            <h2 className="font-display text-[12vw] font-semibold leading-[0.8] tracking-tight text-peach lg:text-[150px]">
+              Edinac
             </h2>
             <p className="mt-3 text-xs font-semibold text-white/80 sm:text-base">
-              Morable Design Studio [Coming Soon]
+              Open to freelance &amp; full-time
             </p>
           </div>
         </div>

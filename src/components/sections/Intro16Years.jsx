@@ -14,11 +14,11 @@ export default function Intro16Years() {
         as="h2"
         className="relative max-w-5xl text-center font-display text-[8vw] font-semibold leading-[1.02] tracking-tight text-ink sm:text-[7vw] lg:text-[112px]"
       >
-        16 years making users{' '}
+        9 years making users{' '}
         <span className="inline-block rounded-full bg-peach-soft px-6 pb-2 pt-1 text-ink">
           click
         </span>{' '}
-        and <span className="text-peach">scroll</span> my designs
+        and <span className="text-peach">scroll</span> my products
       </Reveal>
     </section>
   )

@@ -31,7 +31,7 @@ export default function LetsBuild() {
               href={NAV.email}
               className="mt-1 block font-display text-2xl font-bold tracking-tight text-ink/70 hover:opacity-70 sm:text-4xl"
             >
-              Juan@morable.co
+              e.dmitry12@gmail.com
             </a>
           </div>
         </div>

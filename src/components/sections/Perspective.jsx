@@ -2,10 +2,10 @@ import { A, NAV } from '../../data/assets'
 import Reveal from '../Reveal'
 
 const POINTS = [
-  'I bring a premium and unique visual direction that makes your brand stand out.',
-  'I care about the craft, from concept to final product.',
-  'I define scalable design systems that keep your brand consistent.',
-  'I align your goals with my experience to make the right design decisions for your brand.',
+  '9+ years designing products across logistics, CRM, marketplaces and crypto.',
+  'I care about the craft, from UX research to final, dev-ready UI.',
+  'I define scalable design systems that keep products consistent.',
+  'I align business goals with user needs to make the right design decisions.',
 ]
 
 export default function Perspective() {
