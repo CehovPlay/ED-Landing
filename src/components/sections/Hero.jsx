@@ -28,11 +28,11 @@ export default function Hero() {
 
         {/* Гигантская подпись внизу: оба имени заливкой */}
         <div className="absolute inset-x-0 bottom-[6vw] flex items-end justify-between">
-          <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
+          <h1 className="select-none font-display text-[clamp(2.5rem,11vw,190px)] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
             Dmitry
           </h1>
 
-          <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
+          <h1 className="select-none font-display text-[clamp(2.5rem,11vw,190px)] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
             Edinac
           </h1>
         </div>

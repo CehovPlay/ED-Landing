@@ -96,47 +96,50 @@ export default function IntroShapes() {
       </div>
 
       {/* Экран 2: фигуры (z-20), слегка наезжают на текст */}
-      <div className="relative z-20 -mt-[14vh] h-[98vh]">
-        <svg
-          className="pointer-events-none absolute inset-0 h-full w-full"
-          viewBox="0 0 1000 600"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-        >
-          {LINES.map((l, i) => (
-            <path
-              key={i}
-              ref={(el) => (lineRefs.current[i] = el)}
-              d={l.d}
-              stroke="var(--color-ink)"
-              strokeOpacity={LINE_OP}
-              strokeWidth={LINE_W}
-              strokeLinecap="round"
-            />
-          ))}
-        </svg>
+      <div className="relative z-20 -mt-[14vh] h-[86vh]">
+        {/* Центрируем композицию, чтобы на 2K/4K она не разъезжалась */}
+        <div className="relative mx-auto h-full w-full max-w-[1700px]">
+          <svg
+            className="pointer-events-none absolute inset-0 h-full w-full"
+            viewBox="0 0 1000 600"
+            preserveAspectRatio="xMidYMid slice"
+            fill="none"
+          >
+            {LINES.map((l, i) => (
+              <path
+                key={i}
+                ref={(el) => (lineRefs.current[i] = el)}
+                d={l.d}
+                stroke="var(--color-ink)"
+                strokeOpacity={LINE_OP}
+                strokeWidth={LINE_W}
+                strokeLinecap="round"
+              />
+            ))}
+          </svg>
 
-        {SHAPES.map((s, i) =>
-          s.type === 'css' ? (
-            <div
-              key={i}
-              data-speed={s.speed}
-              className={`shape pointer-events-none absolute will-change-transform ${
-                s.shape === 'squircle' ? 'rounded-[34%]' : 'rounded-full'
-              }`}
-              style={{ top: s.top, left: s.left, width: s.w, height: s.h, background: GRAD }}
-            />
-          ) : (
-            <img
-              key={i}
-              src={s.src}
-              alt=""
-              data-speed={s.speed}
-              className="shape pointer-events-none absolute grayscale will-change-transform"
-              style={{ top: s.top, left: s.left, width: s.w }}
-            />
-          ),
-        )}
+          {SHAPES.map((s, i) =>
+            s.type === 'css' ? (
+              <div
+                key={i}
+                data-speed={s.speed}
+                className={`shape pointer-events-none absolute will-change-transform ${
+                  s.shape === 'squircle' ? 'rounded-[34%]' : 'rounded-full'
+                }`}
+                style={{ top: s.top, left: s.left, width: s.w, height: s.h, background: GRAD }}
+              />
+            ) : (
+              <img
+                key={i}
+                src={s.src}
+                alt=""
+                data-speed={s.speed}
+                className="shape pointer-events-none absolute grayscale will-change-transform"
+                style={{ top: s.top, left: s.left, width: s.w }}
+              />
+            ),
+          )}
+        </div>
 
         <Container className="absolute inset-x-0 bottom-10">
           <span className="text-xs font-medium uppercase tracking-[0.25em] text-ink/50">

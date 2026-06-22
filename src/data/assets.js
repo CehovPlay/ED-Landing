@@ -49,6 +49,6 @@ export const A = {
 export const NAV = {
   email: 'mailto:e.dmitry12@gmail.com?subject=Hey%20Dmitry!',
   phone: 'tel:+37369883690',
-  linkedin: 'https://www.linkedin.com/',
-  dribbble: 'https://dribbble.com/',
+  linkedin: 'https://www.linkedin.com/in/dmitryedinac/',
+  dribbble: 'https://dribbble.com/edmitry12',
 }
