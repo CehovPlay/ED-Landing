@@ -1,4 +1,5 @@
 import { A } from '../../data/assets'
+import Container from '../Container'
 
 export default function Hero() {
   return (
@@ -12,38 +13,34 @@ export default function Hero() {
         alt=""
         className="absolute inset-0 h-full w-full object-cover"
       />
-      {/* Тёплый персиковый оверлей для глубины */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_120%,rgba(241,160,122,0.45),transparent_60%)]" />
+      {/* Нейтральный оверлей для глубины */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/45" />
+      {/* Лёгкий шум */}
+      <div className="noise pointer-events-none absolute inset-0" />
 
-      {/* Подзаголовок слева сверху */}
-      <p className="absolute left-6 top-24 max-w-[14ch] font-display text-2xl font-semibold leading-tight text-white sm:left-10 sm:text-3xl">
-        Product &amp; UI/UX
-        <br />
-        Designer
-      </p>
+      <Container className="relative h-full">
+        {/* Подзаголовок слева сверху */}
+        <p className="absolute left-6 top-24 max-w-[14ch] font-display text-2xl font-semibold leading-tight text-white sm:left-10 sm:text-3xl">
+          Product &amp; UI/UX
+          <br />
+          Designer
+        </p>
 
-      {/* Гигантская подпись внизу: Juan (outline) — карточка — Mora (fill) */}
-      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between px-4 sm:px-8">
-        <h1 className="text-outline select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight">
-          Dmitry
-        </h1>
+        {/* Гигантская подпись внизу: оба имени заливкой */}
+        <div className="absolute inset-x-0 bottom-[6vw] flex items-end justify-between">
+          <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
+            Dmitry
+          </h1>
 
-        {/* Маленькая проектная карточка по центру (перекрывает текст) */}
-        <img
-          src={A.websites[4]}
-          alt=""
-          className="mb-[3vw] hidden h-[18vw] max-h-48 w-auto -rotate-6 rounded-xl object-cover shadow-2xl ring-1 ring-white/20 sm:block"
-        />
+          <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-graphite-mist">
+            Edinac
+          </h1>
+        </div>
 
-        <h1 className="select-none font-display text-[11vw] font-semibold leading-[0.8] tracking-tight text-peach">
-          Edinac
-        </h1>
-      </div>
-
-      <span className="absolute bottom-6 right-8 text-xs font-medium text-white/70">
-        Product Designer · Team Lead
-      </span>
+        <span className="absolute bottom-7 right-6 text-xs font-medium text-white/70 sm:right-10">
+          Product Designer · Team Lead
+        </span>
+      </Container>
     </section>
   )
 }

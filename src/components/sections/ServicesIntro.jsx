@@ -1,16 +1,15 @@
-import Reveal from '../Reveal'
+import Container from '../Container'
 
 // Большой заголовок-«мост» перед рядами работ.
+// Слева по краю контента, на всю ширину — как на референсе. Статичный (без пина).
 export default function ServicesIntro() {
   return (
-    <section className="relative overflow-hidden bg-cream px-6 pt-32 pb-10">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-peach-edge/60 to-transparent" />
-      <Reveal
-        as="h2"
-        className="relative mx-auto max-w-5xl text-center font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-7xl lg:text-[120px]"
-      >
-        I help companies to succeed on projects like:
-      </Reveal>
+    <section className="relative overflow-hidden bg-cream pt-24 pb-10">
+      <Container>
+        <h2 className="text-left font-display text-[9vw] font-bold leading-[1.02] tracking-tight text-ink lg:text-[110px]">
+          Here&rsquo;s how I help teams ship better products:
+        </h2>
+      </Container>
     </section>
   )
 }

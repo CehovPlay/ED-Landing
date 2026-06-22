@@ -5,7 +5,7 @@ const REF = 'https://juanmora.co'
 export const A = {
   // Фоновые видео (полноэкранные фото-секции)
   deskVideo: `${REF}/videos-work/desk_jm3.mp4`,
-  heroPhoto: `${REF}/images/hero-photo-test2.jpg`,
+  heroPhoto: `/hero.png`,
   videoPoster: `${REF}/portfolio2025/video/juan-video-loading.jpg`,
 
   // Логотип в футере
@@ -50,6 +50,5 @@ export const NAV = {
   email: 'mailto:e.dmitry12@gmail.com?subject=Hey%20Dmitry!',
   phone: 'tel:+37369883690',
   linkedin: 'https://www.linkedin.com/',
-  x: 'https://x.com/',
-  behance: 'https://www.behance.net/',
+  dribbble: 'https://dribbble.com/',
 }
