@@ -25,9 +25,9 @@ export default function AboutSection() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         bg.current,
-        { yPercent: -12 },
+        { yPercent: -22 },
         {
-          yPercent: 12,
+          yPercent: 22,
           ease: 'none',
           scrollTrigger: {
             trigger: root.current,
@@ -49,7 +49,7 @@ export default function AboutSection() {
         ref={bg}
         src={A.heroPhoto}
         alt=""
-        className="absolute inset-x-0 -top-[12%] h-[124%] w-full object-cover will-change-transform"
+        className="absolute inset-x-0 -top-[24%] h-[148%] w-full object-cover will-change-transform"
       />
       <div className="absolute inset-0 bg-black/45" />
       {/* Лёгкий шум */}
@@ -59,7 +59,7 @@ export default function AboutSection() {
       <div className="relative flex min-h-screen items-center">
         <Container>
           <div className="max-w-4xl text-left">
-            <h2 className="font-display text-[12vw] font-semibold leading-[0.95] tracking-tight text-graphite-mist lg:text-[150px]">
+            <h2 className="font-display text-[13vw] font-semibold leading-[1.22] tracking-tight text-graphite-mist sm:text-[12vw] sm:leading-[1.12] lg:text-[150px] lg:leading-[1.0]">
               <span className="block">Great products</span>
               <span className="block">take time</span>
             </h2>

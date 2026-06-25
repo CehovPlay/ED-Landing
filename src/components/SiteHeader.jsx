@@ -29,8 +29,8 @@ export default function SiteHeader() {
           </a>
         </nav>
 
-        {/* Контакты справа */}
-        <div className="pointer-events-auto flex items-center gap-4 text-sm font-medium text-white mix-blend-difference">
+        {/* Контакты справа (на мобильных прячем, чтобы не налезали на лого/пилюлю) */}
+        <div className="pointer-events-auto hidden items-center gap-4 text-sm font-medium text-white mix-blend-difference sm:flex">
           <a href={NAV.linkedin} className="hover:opacity-70">
             LinkedIn
           </a>

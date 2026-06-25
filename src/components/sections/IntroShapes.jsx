@@ -6,17 +6,26 @@ import { A } from '../../data/assets'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Разные фигуры: PNG-сферы/пилюли (без иконок) + CSS-сквирклы/капсулы. Плотно, с перекрытием.
+// Разные фигуры: PNG-сферы/пилюли (без иконок) + CSS-сквирклы/капсулы.
+// Раскинуты на всю ширину вьюпорта (left от -7% до 95%, пара уходит за края).
+// Размеры через clamp() — масштабируются на планшетах/мобилках, не вылезают гигантами.
 const GRAD = 'radial-gradient(circle at 35% 28%, #ffffff, #dcdcdc 55%, #a6a6a6 100%)'
+// mobile:false — фигура скрыта на узких экранах (< sm), чтобы композиция не превращалась
+// в кашу. На мобилке остаётся 6 фигур, всё ещё раскинутых от края до края (-7% … 95%),
+// и они крупнее (vw-доля больше), чтобы выглядеть весомо на маленьком экране.
 const SHAPES = [
-  { type: 'img', src: A.shapes.circle1, top: '2%', left: '30%', w: 540, speed: 1.2 },
-  { type: 'img', src: A.shapes.circle2, top: '22%', left: '52%', w: 470, speed: 1.35 },
-  { type: 'img', src: A.shapes.pill, top: '-4%', left: '0%', w: 480, speed: 0.6 },
-  { type: 'css', shape: 'squircle', top: '0%', left: '70%', w: 300, h: 300, speed: 0.95 },
-  { type: 'css', shape: 'squircle', top: '42%', left: '17%', w: 240, h: 240, speed: 0.5 },
-  { type: 'img', src: A.shapes.pill, top: '50%', left: '40%', w: 340, speed: 0.8 },
-  { type: 'img', src: A.shapes.circle1, top: '52%', left: '62%', w: 280, speed: 1.0 },
-  { type: 'css', shape: 'capsule', top: '28%', left: '-5%', w: 380, h: 200, speed: 0.7 },
+  // уходит за левый край
+  { type: 'img', src: A.shapes.pill, top: '6%', left: '-7%', w: 'clamp(190px,40vw,470px)', speed: 0.6, mobile: true },
+  { type: 'css', shape: 'capsule', top: '44%', left: '3%', w: 'clamp(150px,21vw,370px)', h: 'clamp(85px,11vw,195px)', speed: 0.7, mobile: false },
+  { type: 'img', src: A.shapes.circle1, top: '4%', left: '14%', w: 'clamp(170px,38vw,430px)', speed: 1.2, mobile: true },
+  { type: 'css', shape: 'squircle', top: '50%', left: '23%', w: 'clamp(105px,15vw,240px)', h: 'clamp(105px,15vw,240px)', speed: 0.5, mobile: false },
+  { type: 'img', src: A.shapes.circle2, top: '18%', left: '37%', w: 'clamp(200px,46vw,520px)', speed: 1.35, mobile: true },
+  { type: 'img', src: A.shapes.pill, top: '58%', left: '47%', w: 'clamp(150px,36vw,360px)', speed: 0.8, mobile: true },
+  { type: 'css', shape: 'squircle', top: '5%', left: '63%', w: 'clamp(120px,17vw,300px)', h: 'clamp(120px,17vw,300px)', speed: 0.95, mobile: false },
+  { type: 'img', src: A.shapes.circle1, top: '46%', left: '72%', w: 'clamp(140px,34vw,320px)', speed: 1.0, mobile: true },
+  { type: 'css', shape: 'squircle', top: '12%', left: '85%', w: 'clamp(120px,18vw,300px)', h: 'clamp(120px,18vw,300px)', speed: 1.1, mobile: false },
+  // уходит за правый край
+  { type: 'img', src: A.shapes.circle2, top: '56%', left: '93%', w: 'clamp(130px,34vw,300px)', speed: 1.25, mobile: true },
 ]
 
 // Плывущие линии: одинаковая явная толщина, летают в разные стороны.
@@ -96,9 +105,9 @@ export default function IntroShapes() {
       </div>
 
       {/* Экран 2: фигуры (z-20), слегка наезжают на текст */}
-      <div className="relative z-20 -mt-[14vh] h-[86vh]">
-        {/* Центрируем композицию, чтобы на 2K/4K она не разъезжалась */}
-        <div className="relative mx-auto h-full w-full max-w-[1700px]">
+      <div className="relative z-20 -mt-[14vh] h-[70vh] sm:h-[86vh]">
+        {/* На всю ширину вьюпорта — фигуры раскинуты от края до края */}
+        <div className="relative h-full w-full">
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full"
             viewBox="0 0 1000 600"
@@ -118,12 +127,13 @@ export default function IntroShapes() {
             ))}
           </svg>
 
-          {SHAPES.map((s, i) =>
-            s.type === 'css' ? (
+          {SHAPES.map((s, i) => {
+            const hide = s.mobile ? '' : 'hidden sm:block'
+            return s.type === 'css' ? (
               <div
                 key={i}
                 data-speed={s.speed}
-                className={`shape pointer-events-none absolute will-change-transform ${
+                className={`shape pointer-events-none absolute will-change-transform ${hide} ${
                   s.shape === 'squircle' ? 'rounded-[34%]' : 'rounded-full'
                 }`}
                 style={{ top: s.top, left: s.left, width: s.w, height: s.h, background: GRAD }}
@@ -134,11 +144,11 @@ export default function IntroShapes() {
                 src={s.src}
                 alt=""
                 data-speed={s.speed}
-                className="shape pointer-events-none absolute grayscale will-change-transform"
+                className={`shape pointer-events-none absolute grayscale will-change-transform ${hide}`}
                 style={{ top: s.top, left: s.left, width: s.w }}
               />
-            ),
-          )}
+            )
+          })}
         </div>
 
         <Container className="absolute inset-x-0 bottom-10">
